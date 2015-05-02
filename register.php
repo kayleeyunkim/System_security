@@ -89,7 +89,7 @@ function checkpassword(pwd, repwd)
     {
         alert("same");
     }
-    
+
     else
     {
         alert("Please match the password and re-type password");
@@ -106,18 +106,18 @@ function checkpassword(pwd, repwd)
     $username="hello";  //mysql username default is root.
     $password="tkfkdgo1";       //blank if no password is set for mysql.
     $database="424project";  //database name which you created
-    
+
     $con=mysql_connect($hostname,$username,$password);
     $db = mysql_select_db('424project', $con);
-    
+
     if(!$con)
     die('Connection Failed '.mysql_error());
-    
+
     if (!$db)
     die('Database connection failed '.mysql_error());
-    
+
     $errorempty = "";
-    
+
     if ($_POST)
     {
         if (empty($_POST["username"]) || empty($_POST["pwd"])) {
@@ -127,19 +127,19 @@ function checkpassword(pwd, repwd)
         {
             $username = $_POST['username'];
             $password = $_POST['pwd'];
-            
+
             /*
              if (preg_match('/[0-9]/', $password) == 0 || preg_match('/[a-zA-Z]', $password) == 0 || preg_match('/[!@#$%^&*-+=_]/', $password) )
              {
              $errorempty = "Password must contains at least one number, one letter, and one special characters";
              }
              */
-            
+
             //   else
             //   {
             $query = "INSERT INTO user_tb (username, password) VALUES ('" . $username . "', '" . $password . "')";
             $result = mysql_query($query);
-            
+
             if($result)
             {
                 echo "<br/><div style='color:lightseagreen; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;'>User Created Successfully.</div>";
