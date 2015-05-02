@@ -89,7 +89,7 @@ function checkpassword(pwd, repwd)
     {
         alert("same");
     }
-
+    
     else
     {
         alert("Please match the password and re-type password");
@@ -106,18 +106,18 @@ function checkpassword(pwd, repwd)
     $username="hello";  //mysql username default is root.
     $password="tkfkdgo1";       //blank if no password is set for mysql.
     $database="424project";  //database name which you created
-
+    
     $con=mysql_connect($hostname,$username,$password);
     $db = mysql_select_db('424project', $con);
-
+    
     if(!$con)
     die('Connection Failed '.mysql_error());
-
+    
     if (!$db)
     die('Database connection failed '.mysql_error());
-
+    
     $errorempty = "";
-
+    
     if ($_POST)
     {
         if (empty($_POST["username"]) || empty($_POST["pwd"])) {
@@ -127,19 +127,19 @@ function checkpassword(pwd, repwd)
         {
             $username = $_POST['username'];
             $password = $_POST['pwd'];
-
+            
             /*
              if (preg_match('/[0-9]/', $password) == 0 || preg_match('/[a-zA-Z]', $password) == 0 || preg_match('/[!@#$%^&*-+=_]/', $password) )
              {
              $errorempty = "Password must contains at least one number, one letter, and one special characters";
              }
              */
-
+            
             //   else
             //   {
             $query = "INSERT INTO user_tb (username, password) VALUES ('" . $username . "', '" . $password . "')";
             $result = mysql_query($query);
-
+            
             if($result)
             {
                 echo "<br/><div style='color:lightseagreen; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;'>User Created Successfully.</div>";
@@ -156,8 +156,8 @@ function checkpassword(pwd, repwd)
 <input type = "text" class = "register" name = "firstname" placeholder="First name (*Required)">
 <input type = "text" class = "register" name = "lastname" placeholder="Last name (*Required)">
 <br/>
-Year: <select class = "year" id = "yearid" name = "selectyear">
-<option value ="">Select Year..</option>
+<select class = "year" id = "yearid" name = "selectyear">
+<option value ="">Year..</option>
 <option value ="1971">1971</option>
 <option value ="1972">1972</option>
 <option value ="1973">1973</option>
@@ -194,8 +194,9 @@ Year: <select class = "year" id = "yearid" name = "selectyear">
 <option value ="2004">2004</option>
 <option value ="2005">2005</option>
 </select>
-Month: <select class = "month" id = "monthid" name="selectMonth">
-<option value="">Select Month..</option>
+
+<select class = "month" id = "monthid" name="selectMonth">
+<option value="">Month..</option>
 <option value="01">Janurary</option>
 <option value="02">Faburary</option>
 <option value="03">March</option>
@@ -209,9 +210,9 @@ Month: <select class = "month" id = "monthid" name="selectMonth">
 <option value="11">November</option>
 <option value="12">December</option>
 </select>
-<br/>
-Day: <select class = "day" id="dayid" name="selectday">
-<option value = "">Select Day..</option>
+
+<select class = "day" id="dayid" name="selectday">
+<option value = "">Day..</option>
 <option value="01">1</option>
 <option value="02">2</option>
 <option value="03">3</option>
