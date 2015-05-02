@@ -166,6 +166,7 @@ if($_POST)
     if(!isset($_SESSION['logged_in']))
     { ?>
         <h3 style = 'text-align: center; margin-top: 25px;'>Don't an have acccount? Register <a href="register.php">HERE</a></h3>
+        <h3 style = 'text-align: center; margin-top: 25px;'>Forgot Username / Password? Find <a href="forgot.php">HERE</a></h3>
 
         <form method="post" action="">
             <div class = logindiv>
