@@ -97,7 +97,7 @@
 </style>
 
 <?php session_start();
-    
+
 if($_POST)
 {
     $valid = true;
@@ -172,7 +172,7 @@ if($_POST)
                 <div class = title>SIGN IN</div>
                 <div class = logindivdiv>
                     <input type="text" name="username" placeholder="Enter your username" class = "login">
-                    <input type="text" name="pwd" placeholder="Enter your password" class = "login">
+                    <input type="password" name="pwd" placeholder="Enter your password" class = "login">
                 </div>
                 <div class = "loginbutton">
                     <input type="submit" value="Login" class = "submitdiv">
