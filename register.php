@@ -11,6 +11,8 @@
 
 
 <head>
+    <meta charset = "utf-8">
+
     <title>REGISTRATION FORM</title>
 
     <script type="text/javascript">

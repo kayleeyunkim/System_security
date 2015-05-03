@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset = "utf-8">
+
     <title>FORGOT INFO</title>
 
     <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
@@ -24,11 +26,6 @@
             <input type="text" class="forgot2" name="year" placeholder="Year">
             <input type="text" class="forgot3" name="month" placeholder="Month">
             <input type="text" class="forgot2" name="day" placeholder="Day">
-        </div>
-
-        <div class="submit_div">
-            <input type="submit" name="submit" value="Find info" class="submit">
-            <span class=error> <?php echo "<br/><div style='text-align: center'>$errorempty</div>" ?></span>
         </div>
     </div>
 </form>
