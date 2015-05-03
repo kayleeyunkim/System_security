@@ -1,5 +1,8 @@
-<style type="text/css" src="./assets/stylesheet.css"></style>
-
+<html>
+<head>
+<link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
+</head>
 <?php session_start();
 
 if ($_POST) {
@@ -70,7 +73,7 @@ if (!isset($_SESSION['logged_in'])) { ?>
                 <input type="PASSWORD" name="pwd" placeholder="Enter your password" class="login">
             </div>
             <div class="loginbutton">
-                <input type="submit" value="Login" class="submitdiv">
+                <input type="submit" value="Login" class="submitdiv btn btn-primary">
             </div>
         </div>
     </form>
@@ -98,3 +101,5 @@ else {
     ?>
     <br/>
 <? } ?>
+
+</html>
