@@ -69,8 +69,7 @@ color: red;
     font-weight: bold;
 }
 </style>
-<style type="text/css" src="./assets/strength.css"></style>
-
+<link rel="stylesheet" type="text/css" href="./assets/strength.css">
 <script type ="text/javascript">
 function checkempty(elem, helperMsg)
 {
