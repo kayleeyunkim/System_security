@@ -99,8 +99,6 @@ function checkpassword(pwd, repwd)
 </script>
 </head>
 
-<body>
-
 <?php
     $hostname="localhost"; //local server name default localhost
     $username="hello";  //mysql username default is root.
@@ -118,7 +116,7 @@ function checkpassword(pwd, repwd)
 
     $errorempty = "";
 
-    if ($_POST)
+    if ($_POST && empty($_POST["honeypot"]))
     {
         if (empty($_POST["username"]) || empty($_POST["pwd"])) {
             $errorempty = "Please fill required field";
@@ -155,6 +153,11 @@ function checkpassword(pwd, repwd)
 <div class = "register_div">
 <input type = "text" class = "register" name = "firstname" placeholder="First name (*Required)">
 <input type = "text" class = "register" name = "lastname" placeholder="Last name (*Required)">
+<body>
+<div id="honeypot-check" style="display:none">
+This is to check if you are human.
+<input type="text" name="honeypot" value="" />
+</div>
 <br/>
 <select class = "year" id = "yearid" name = "selectyear">
 <option value ="">Year..</option>
