@@ -13,8 +13,6 @@
 <head>
     <title>REGISTRATION FORM</title>
 
-
-
     <script type="text/javascript">
         function checkempty(elem, helperMsg) {
             if (elem.value.length == 0) {
@@ -23,16 +21,6 @@
                 return false;
             }
             return true;
-        }
-
-        function checkpassword(pwd, repwd) {
-            if (pwd === repwd) {
-
-            }
-
-            else {
-                alert("Please match the password and re-type password");
-            }
         }
 
         $(document).ready(function ($) {
@@ -48,6 +36,17 @@
             //strengthButtonText: 'Show password',
             //strengthButtonTextToggle: 'Hide Password'
         });
+
+        function checkpassword(pwd, repwd) {
+            if (pwd === repwd) {
+
+            }
+
+            else {
+                alert("Please match the password and re-type password");
+                //document.getElementById("matchpwd").style.display = 'block';
+            }
+        }
 
     </script>
 </head>
@@ -70,35 +69,38 @@ if (!$db)
 $errorempty = "";
 
 if ($_POST && empty($_POST["honeypot"])) {
-    if (empty($_POST["username"]) || empty($_POST["pwd"])) {
+    if (empty($_POST["username"]) || empty($_POST["pwd"]) || empty($_POST["firstname"]) || empty($_POST["lastname"])
+            || empty($_POST["selectyear"]) || empty($_POST["selectmonth"]) || empty($_POST["selectday"])) {
         $errorempty = "Please fill required field";
-    } else if (isset($_POST['username']) && isset($_POST['pwd'])) {
+    }
+
+    else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['firstname']) && isset($_POST['lastname']) &&
+            isset($_POST['selectyear']) && isset($_POST['selectmonth']) && isset($_POST['selectday']))
+    {
         $username = $_POST['username'];
         $password = $_POST['pwd'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $year = $_POST['selectyear'];
+        $month = $_POST['selectmonth'];
+        $day = $_POST['selectday'];
 
-        /*
-         if (preg_match('/[0-9]/', $password) == 0 || preg_match('/[a-zA-Z]', $password) == 0 || preg_match('/[!@#$%^&*-+=_]/', $password) )
-         {
-         $errorempty = "Password must contains at least one number, one letter, and one special characters";
-         }
-         */
-
-        //   else
-        //   {
-        $query = "INSERT INTO user_tb (username, password) VALUES ('" . $username . "', '" . $password . "')";
+        $query = "INSERT INTO user_tb (username, password) VALUES ('" . $username . "', '" . $password . "', '" . $firstname . "', '" . $lastname . "', '" . $year . "', '" . $month . "', '" . $day . "',)";
         $result = mysql_query($query);
 
         if ($result) {
             echo "<br/><div style='color:lightseagreen; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;'>User Created Successfully.</div>";
         }
-        //   }
     }
 }
 ?>
 <h3 style='text-align: center'>Sign In <a href="signin.php">HERE</a></h3>
 
-<form name="registration" method="post" action="register.php" onsubmit="return validation()">
+<form name="registration" method="post" action="register.php" onsubmit="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
     <div class=outerbox_register>
+
+        <p id = "matchpwd" style="color:red; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px; display: none;">Please match the password and re-type password </p>
+
         <div class="title">Registration Form</div>
         <div class="register_div">
             <input type="text" class="register" name="firstname" placeholder="First name (*Required)">
@@ -151,7 +153,7 @@ if ($_POST && empty($_POST["honeypot"])) {
                 <option value="2005">2005</option>
             </select>
 
-            <select class="dob2" id="monthid" name="selectMonth">
+            <select class="dob2" id="monthid" name="selectmonth">
                 <option value="">Month..</option>
                 <option value="01">Janurary</option>
                 <option value="02">Faburary</option>
@@ -205,10 +207,6 @@ if ($_POST && empty($_POST["honeypot"])) {
             <input type="email" class="register" name="username" placeholder="Email (*Required)"> <br/>
             <input id="pwdid" class="register1" type="PASSWORD" name="pwd" value="" placeholder = "Password (*Required)">
             <input type="PASSWORD" class="register1" id="repwdid" name="repwd" placeholder="Re-type Password">
-            <button type="button" class="register"
-                    onclick="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
-                check password
-            </button>
         </div>
         <div class="submit_div">
             <input type="submit" name="submit" value="Register" class="submit">
