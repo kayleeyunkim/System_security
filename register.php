@@ -96,7 +96,7 @@ if ($_POST && empty($_POST["honeypot"])) {
 ?>
 <h3 style='text-align: center'>Sign In <a href="signin.php">HERE</a></h3>
 
-<form name="registration" method="post" action="register.php" onsubmit="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
+<form name="registration" id = "registration" method="post" action="register.php" onsubmit="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
     <div class=outerbox_register>
 
         <p id = "matchpwd" style="color:red; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px; display: none;">Please match the password and re-type password </p>
@@ -205,6 +205,7 @@ if ($_POST && empty($_POST["honeypot"])) {
             </select>
 
             <input type="email" class="register" name="username" placeholder="Email (*Required)"> <br/>
+
             <input id="pwdid" class="register1" type="PASSWORD" name="pwd" value="" placeholder = "Password (*Required)">
             <input type="PASSWORD" class="register1" id="repwdid" name="repwd" placeholder="Re-type Password">
         </div>
