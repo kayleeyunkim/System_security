@@ -116,7 +116,7 @@ function checkpassword(pwd, repwd)
 
     $errorempty = "";
 
-    if ($_POST && empty($_POST["honeypot"]))
+    if ($_POST && empty($_POST["etc"]))
     {
         if (empty($_POST["username"]) || empty($_POST["pwd"])) {
             $errorempty = "Please fill required field";
@@ -156,7 +156,7 @@ function checkpassword(pwd, repwd)
 <body>
 <div id="honeypot-check" style="display:none">
 This is to check if you are human.
-<input type="text" name="honeypot" value="" />
+<input type="text" name="etc" value="" />
 </div>
 <br/>
 <select class = "year" id = "yearid" name = "selectyear">
