@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
 
@@ -96,6 +97,7 @@ if ($_POST && empty($_POST["honeypot"])) {
     }
 }
 ?>
+<body>
 <h3 style='text-align: center'>Sign In <a href="signin.php">HERE</a></h3>
 
 <form name="registration" id = "registration" method="post" action="register.php" onsubmit="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
@@ -108,7 +110,7 @@ if ($_POST && empty($_POST["honeypot"])) {
             <input type="text" class="register" name="firstname" placeholder="First name (*Required)">
             <input type="text" class="register" name="lastname" placeholder="Last name (*Required)">
 
-            <body>
+
             <div id="honeypot-check" style="display:none">
                 This is to check if you are human.
                 <input type="text" name="honeypot" value=""/>

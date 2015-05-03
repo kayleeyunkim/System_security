@@ -1,6 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset = "utf-8">
+
+    <title>Log in</title>
+
+
 <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
+</head>
 
+<body>
 <?php session_start();
 
 if ($_POST) {
@@ -99,3 +111,5 @@ else {
     ?>
     <br/>
 <? } ?>
+</body>
+</html>
