@@ -25,6 +25,11 @@
             <input type="text" class="forgot3" name="month" placeholder="Month">
             <input type="text" class="forgot2" name="day" placeholder="Day">
         </div>
+
+        <div class="submit_div">
+            <input type="submit" name="submit" value="Find info" class="submit">
+            <span class=error> <?php echo "<br/><div style='text-align: center'>$errorempty</div>" ?></span>
+        </div>
     </div>
 </form>
 </body>
