@@ -1,8 +1,6 @@
-<html>
-<head>
 <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
-</head>
+
 <?php session_start();
 
 if ($_POST) {
@@ -51,7 +49,7 @@ if ($_POST) {
             header("Location: signin.php");
         } else {
             echo "<div style='color:red; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;'>
-                Wrong credentials. Please try again or register!</div>";
+                Wrong credentials. Please try again!</div>";
         }
     } else {
         echo "<div style='color:red; text-align: center; font-weight: bold; font-size: 30px; margin-top: 25px;'>Please check your input.</div> ";
@@ -60,7 +58,7 @@ if ($_POST) {
 
 <?php
 if (!isset($_SESSION['logged_in'])) { ?>
-    <h3 style='text-align: center; margin-top: 25px;'>Don't an have acccount? Register <a href="register.php">HERE</a>
+    <h3 style='text-align: center; margin-top: 25px;'>Don't have an acccount? Register <a href="register.php">HERE</a>
     </h3>
     <h3 style='text-align: center; margin-top: 0px; margin-bottom: 10px;'>Forgot Username / Password? Find <a href="forgot.php">HERE</a>
     </h3>
@@ -69,11 +67,11 @@ if (!isset($_SESSION['logged_in'])) { ?>
         <div class="logindiv">
             <div class="title">SIGN IN</div>
             <div class="logindivdiv">
-                <input type="text" name="username" placeholder="Enter your username" class="login"> <br/>
+                <input type="text" name="username" placeholder="Enter your username" class="login" style="margin-bottom: 5px;"> <br/>
                 <input type="PASSWORD" name="pwd" placeholder="Enter your password" class="login">
             </div>
             <div class="loginbutton">
-                <input type="submit" value="Login" class="submitdiv btn btn-primary">
+                <input type="submit" value="Login" class="submitdiv">
             </div>
         </div>
     </form>
@@ -101,5 +99,3 @@ else {
     ?>
     <br/>
 <? } ?>
-
-</html>
