@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset = "utf-8">
-
+	<meta charset = "utf-8">
     <title>FORGOT INFO</title>
 
     <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
