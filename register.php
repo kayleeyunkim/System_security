@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <link rel="stylesheet" href="./assets/stylesheet.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./assets/bootstrap.min.css">
 
@@ -12,10 +11,8 @@
 
 
 <head>
-    <meta charset = "utf-8">
-
     <title>REGISTRATION FORM</title>
-
+    <meta charset = "utf-8">
     <script type="text/javascript">
         function checkempty(elem, helperMsg) {
             if (elem.value.length == 0) {
@@ -54,17 +51,15 @@
     </script>
 </head>
 
+
+
 <?php
 $hostname = "localhost"; //local server name default localhost
-$username = "hello";  //mysql username default is root.
-$password = "tkfkdgo1";       //blank if no password is set for mysql.
+$username = "binker";  //mysql username default is root.
+$password = "admin";       //blank if no password is set for mysql.
 $database = "424project";  //database name which you created
 
-<<<<<<< HEAD
 $con = mysql_connect($hostname, $username, $password);
-=======
-$con = mysql_connect("localhost", "binker","admin","424project");
->>>>>>> origin/master
 $db = mysql_select_db('424project', $con);
 
 if (!$con)
@@ -77,41 +72,22 @@ $errorempty = "";
 
 if ($_POST && empty($_POST["honeypot"])) {
     if (empty($_POST["username"]) || empty($_POST["pwd"]) || empty($_POST["firstname"]) || empty($_POST["lastname"])
-<<<<<<< HEAD
             || empty($_POST["selectyear"]) || empty($_POST["selectmonth"]) || empty($_POST["selectday"])) {
-=======
-            || empty($_POST["emailz"]) || empty($_POST["selectyear"]) || empty($_POST["selectmonth"]) || empty($_POST["selectday"])) {
->>>>>>> origin/master
         $errorempty = "Please fill required field";
     }
 
     else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['firstname']) && isset($_POST['lastname']) &&
-<<<<<<< HEAD
             isset($_POST['selectyear']) && isset($_POST['selectmonth']) && isset($_POST['selectday']))
-=======
-            isset($_POST['emailz']) && isset($_POST['selectyear']) && isset($_POST['selectmonth']) && isset($_POST['selectday']))
->>>>>>> origin/master
     {
         $username = $_POST['username'];
         $password = $_POST['pwd'];
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
-<<<<<<< HEAD
         $year = $_POST['selectyear'];
         $month = $_POST['selectmonth'];
         $day = $_POST['selectday'];
 
         $query = "INSERT INTO user_tb (username, password) VALUES ('" . $username . "', '" . $password . "', '" . $firstname . "', '" . $lastname . "', '" . $year . "', '" . $month . "', '" . $day . "',)";
-=======
-        $email = $_POST['email'];
-        $year = $_POST['selectyear'];
-        $month = $_POST['selectmonth'];
-        $day = $_POST['selectday'];
-        $birhday = $year + "-" + $month + "-" + day
-        $today = date("z");
-        $query = "INSERT INTO students (today, username, userpass, fname, lname, email, birthday )
-        VALUES ('$today','$username','$password','$firstname','$lastname','$email','$birthday')";
->>>>>>> origin/master
         $result = mysql_query($query);
 
         if ($result) {
@@ -120,7 +96,6 @@ if ($_POST && empty($_POST["honeypot"])) {
     }
 }
 ?>
-<body>
 <h3 style='text-align: center'>Sign In <a href="signin.php">HERE</a></h3>
 
 <form name="registration" id = "registration" method="post" action="register.php" onsubmit="checkpassword(document.getElementById('pwdid').value, document.getElementById('repwdid').value)">
@@ -132,12 +107,8 @@ if ($_POST && empty($_POST["honeypot"])) {
         <div class="register_div">
             <input type="text" class="register" name="firstname" placeholder="First name (*Required)">
             <input type="text" class="register" name="lastname" placeholder="Last name (*Required)">
-<<<<<<< HEAD
 
-=======
-            <input type="text" class="register" name="emailz" placeholder="Email (*Required)">
->>>>>>> origin/master
-
+            <body>
             <div id="honeypot-check" style="display:none">
                 This is to check if you are human.
                 <input type="text" name="honeypot" value=""/>
@@ -239,17 +210,14 @@ if ($_POST && empty($_POST["honeypot"])) {
 
             <input id="pwdid" class="register1" type="PASSWORD" name="pwd" value="" placeholder = "Password (*Required)">
             <input type="PASSWORD" class="register1" id="repwdid" name="repwd" placeholder="Re-type Password">
-<<<<<<< HEAD
-            <select class = "securityquestion"  name="securityquestion">
-                <option value="">Choose Security question</option>
-                <option value="petname">What is your pet name?</option>
-                <option value="schoolname">Which University did you attand?</option>
-                <option value="gradyear">What year did you graduate?</option>
-                <option value="maiden">What is your mother's maiden name?</option>
-            </select>
-            <input type="text" class ="register" name="securityanswer" placeholder="Answer for Security Question">
-=======
->>>>>>> origin/master
+	 <select class = "securityquestion" name="securityquestion">
+		<option value="">Choose Security question</option>
+		<option value="petname">What is your pet name?</option>
+		<option value="schoolname">Which University did you attand?</option>
+		<option value="gradyear">What year did you graduate?</option>
+		<option value="maiden">What is your mother's maiden name?</option>
+	</select>
+<input type="text" class ="register" name="securityanswer" placeholder="Answer for Security Question">
         </div>
         <div class="submit_div">
             <input type="submit" name="submit" value="Register" class="submit">
@@ -259,8 +227,4 @@ if ($_POST && empty($_POST["honeypot"])) {
 </form>
 <script type="text/javascript" src="./assets/strength.min.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> origin/master
