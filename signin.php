@@ -34,7 +34,11 @@ if ($_POST) {
         $password = "tkfkdgo1";       //blank if no password is set for mysql.
         $database = "424project";  //database name which you created
 
+<<<<<<< HEAD
         $con = mysql_connect($hostname, $username, $password);
+=======
+        $con = mysql_connect("localhost","binker","admin","424project");
+>>>>>>> origin/master
         $db = mysql_select_db('424project', $con);
 
         if (!$con)
@@ -47,13 +51,22 @@ if ($_POST) {
         $username = $_POST['username'];
         $password = $_POST['pwd'];
 
+<<<<<<< HEAD
         $query = "SELECT * FROM  user_tb where username = \"$username\" AND password = \"$password\"";
+=======
+        $query = "SELECT * FROM  user_tb where username = \"$username\" AND userpass = \"$password\"";
+>>>>>>> origin/master
 
         $result = mysql_query($query);
 
         $row = mysql_fetch_assoc($result);
 
         if ($row) {
+<<<<<<< HEAD
+=======
+            $today = date("z");
+            $sql = "UPDATE 424project SET today='$today' WHERE userid='$row['userid']'";
+>>>>>>> origin/master
             $_SESSION['user_id'] = $row['userid'];
             $_SESSION['logged_in'] = true;
             $_SESSION['user_name'] = $username;
