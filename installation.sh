@@ -7,6 +7,8 @@ sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.co
 sudo a2enconf phpmyadmin
 sudo /etc/init.d/apache2 reload
 mysql -u root << EOF
+adduser binker
+sudo usermod -a -G sudo binker
 use mysql;
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('admin');
 GRANT ALL PRIVILEGES ON *.* TO 'binker'@'localhost' IDENTIFIED BY 'admin' WITH GRANT OPTION;
