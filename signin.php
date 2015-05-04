@@ -19,7 +19,7 @@
     </style>
   </head>
  <body>
- 
+
  <!--Initial connection to mysql -->
 <?php
   $con=mysqli_connect("localhost","binker","admin","DannyNCale+2");
@@ -75,9 +75,24 @@ if ($passwordLOG == $row['userpass']){
 }
       }
     }
-    
+
     //If information is correct, display log in message and message form
+function curPageURL() {
+    $pageURL = 'http';
+    if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+    $pageURL .= "://";
+    if ($_SERVER["SERVER_PORT"] != "80") {
+        $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+    } else {
+      $pageURL .= $_SERVER["SERVER_NAME"];
+    }
+    return $pageURL;
+}
+
     if ($h == 2){
+        $baseUrl = curPageURL();
+header("Location: $baseUrl/loggedin.php");
+die();
         echo '<style type="text/css">
 #formg{
 display: inline;
