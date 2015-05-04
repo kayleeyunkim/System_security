@@ -62,6 +62,11 @@ $database = "Comp424";  //database name which you created
 $con = mysql_connect($hostname, $username, $password);
 $db = mysql_select_db($database, $con);
 
+$con=mysqli_connect("localhost","binker","admin","Comp424");
+if (mysqli_connect_errno()){
+    echo "Failed to Connect to MySQL: " . mysqli_connect_error();
+}
+
 if (!$con)
     die('Connection Failed ' . mysql_error());
 

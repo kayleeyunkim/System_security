@@ -1,10 +1,16 @@
-#!/bin/bash     
+#!/bin/bash
 sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables --table filter -P INPUT DROP
 sudo iptables --table filter -P FORWARD DROP
 sudo iptables --table filter -P OUTPUT ACCEPT
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -F INPUT
+sudo iptables -F OUTPUT
+sudo iptables -F FORWARD
 sudo iptables --table filter -N user-input
 sudo iptables --table filter -N user-limit
 sudo iptables --table filter -N user-limit-accept
