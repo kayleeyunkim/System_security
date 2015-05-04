@@ -57,10 +57,10 @@
 $hostname = "localhost"; //local server name default localhost
 $username = "binker";  //mysql username default is root.
 $password = "admin";       //blank if no password is set for mysql.
-$database = "424project";  //database name which you created
+$database = "Comp424";  //database name which you created
 
 $con = mysql_connect($hostname, $username, $password);
-$db = mysql_select_db('424project', $con);
+$db = mysql_select_db($database, $con);
 
 if (!$con)
     die('Connection Failed ' . mysql_error());
