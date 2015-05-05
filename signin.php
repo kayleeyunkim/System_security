@@ -22,7 +22,7 @@
 
  <!--Initial connection to mysql -->
 <?php
-  $con=mysqli_connect("localhost","binker","admin","DannyNCale+2");
+  $con=mysqli_connect("localhost","binker","admin","Comp424");
 
   if (mysqli_connect_errno()){
     echo "Failed to Connect to MySQL: " . mysqli_connect_error();
